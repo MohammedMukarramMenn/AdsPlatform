@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import HeroSection from "../app/components/HeroSection";
+import { getPosts } from "./helper/ApiUrlHelper";
 
 const Page = () => {
   const [data, setData] = useState([]);
@@ -8,7 +9,7 @@ const Page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("/api/proxy/posts"); // Proxy endpoint
+        const res = await fetch(getPosts(), { next: { revalidate: 60 } }); // Proxy endpoint
         const jsonData = await res.json();
         setData(jsonData.data);
       } catch (error) {
