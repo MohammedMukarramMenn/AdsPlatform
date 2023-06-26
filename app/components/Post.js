@@ -40,7 +40,7 @@ const Post = ({ posts }) => {
       <div className={`${styles.hero_header}`}>
         <div className={`row ${styles.middle_banner}`}>
           <div className={`col-12`}>
-          <Image src={'/adv3.gif'} width={1000} height={400} alt="Something"></Image>
+          <Image className= {styles.middle_banner_image}src={'/adv3.gif'} width={1000} height={400} alt="Something"></Image>
           </div>
         </div>
         <div className={`row mt-3`}>

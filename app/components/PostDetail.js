@@ -4,7 +4,7 @@ import styles from "../styles/common.module.css";
 const PostDetail = ({ details }) => {
   return (
     <div className={`${styles.post_detail}`}>
-      <div className={`row ${styles.pd_container1}`}>
+      <div className={`row ${styles.pd_container1} mt-3 p-2`}>
         <div className={`col-8 ${styles.pd_background} ${styles.pd_header}`}>
           <h1 className={`${styles.pd_background}`}>{details.title}</h1>
         </div>    

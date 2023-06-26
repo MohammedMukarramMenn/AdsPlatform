@@ -59,7 +59,7 @@
 }
 
 .cardContainer {
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: white;
 }
 
@@ -80,8 +80,13 @@
 
 .cardImage {
     position: relative;
-    height: 100px;
+    /* height: 130px; */
     width: 130px;
+    object-fit: cover;
+    height: 10vw;
+    object-fit: cover;
+
+
 }
 .imageContainer {
     width: 100%;
@@ -228,6 +233,15 @@
     color: #000;
 }
 
+.middle_banner img {
+    width: 100%;
+    height: 90%;
+}
+
+.posts {
+    margin: 1%;
+}
+
 /* Pagination CSS*/
 
 .pagination {
@@ -255,10 +269,10 @@
 
 /* Post Detail */
 .post_detail {
-    margin-top: 2%;
+    margin: 2%;
 }
 .pd_container1 {
-    margin: 1%;
+    /* margin-top: 15%; */
     box-shadow: 0 2px 4px rgba(0, 0, 0.2, 0.4);
     background-color: white;
 }
@@ -338,9 +352,11 @@
         margin-left: 3%;
         margin-bottom: 2%;
     }
-    /* .middle_banner {
-        display: none;
-    } */
+    .middle_banner img {
+        width: 100%;
+        height: 90%;
+    }
+    
     .posts {
         margin-top: 0%;
         margin-left: 3%;
@@ -352,7 +368,7 @@
     }
 
     .cardImage {
-        /* margin-top: 3%; */
+        margin-top: 3%;
         position: relative;
         height: 150px;
         width: 200px;
