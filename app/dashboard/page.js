@@ -42,7 +42,7 @@ const Page = () => {
   const report1 = { title: "Active Listing", count: count };
   const report2 = { title: "Report", count: 0 };
   return (
-    <div className="container-fluid">
+    <div className="">
       <div className="row">
         <div className="col-4">
           <SideNav />

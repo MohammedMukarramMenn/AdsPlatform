@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import { login } from "../../helper/ApiUrlHelper"; // Assuming login() function is exported from ApiUrlHelper
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import styles from "../../styles/login.module.css";
 
 const Page = () => {
-  const [cookiesCleared, setCookiesCleared] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -57,33 +58,57 @@ const Page = () => {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-center m-3">
-      <form className="row g-3" onSubmit={handleSubmit}>
-        <h1>Login</h1>
-        <div className="col-12">
-          <label className="form-label">Email</label>
-          <input
-            type="email"
-            className="form-control"
-            defaultValue={email}
-            onChange={handleEmailChange}
-          />
+    <div className={`d-flex align-items-center justify-content-center m-3`}>
+      <div className={`row`}>
+        <div className="col-md-4"></div>
+        <div className={`col-md-4 col-sm-12 ${styles.formContainer}`}>
+          <form
+            className={`row g-3 ${styles.background}`}
+            onSubmit={handleSubmit}
+          >
+            <h1 className={`${styles.header} ${styles.background}`}>Login</h1>
+            <div className={`col-12 ${styles.background}`}>
+              <label className={`form-label ${styles.background}`}>Email</label>
+              <input
+                type="email"
+                className="form-control"
+                defaultValue={email}
+                onChange={handleEmailChange}
+              />
+            </div>
+            <div className={`col-12 ${styles.background}`}>
+              <label className={`form-label ${styles.background}`}>
+                Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                defaultValue={password}
+                onChange={handlePasswordChange}
+              />
+            </div>
+            <div className={`col-12 ${styles.background}`}>
+              <Link href="/session/forgotPassword">
+                <label className={`form-label ${styles.background}`}>
+                  Forgot your password ?
+                </label>
+              </Link>
+            </div>
+            <div className={`col-12 ${styles.background}`}>
+              <button type="submit" className="btn btn-warning">
+                Log in
+              </button>
+            </div>
+            <div className={`col-12 ${styles.background}`}>
+              <label className={`form-label ${styles.background}`}>
+                Don't have an account?
+                <Link href="/session/register"> <span className={`${styles.background}`}>Sign up</span></Link>
+              </label>
+            </div>
+          </form>
         </div>
-        <div className="col-12">
-          <label className="form-label">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            defaultValue={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <div className="col-12">
-          <button type="submit" className="btn btn-warning">
-            Sign in
-          </button>
-        </div>
-      </form>
+        <div className="col-md-4"></div>
+      </div>
     </div>
   );
 };

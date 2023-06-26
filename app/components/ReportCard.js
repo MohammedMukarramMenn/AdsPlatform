@@ -6,7 +6,7 @@ const ReportCard = ({ props }) => {
 
   return (
     <div className={styles.reportCard}>
-      <Link className={styles.link} href="">
+      <Link className={styles.link} href="/posts">
         <div className="row">
           <h1>
             {props.title}: {props.count}

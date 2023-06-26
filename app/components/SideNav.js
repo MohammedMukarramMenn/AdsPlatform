@@ -15,7 +15,7 @@ const SideNav = () => {
         <Link className={styles.link} href="/editCompany">Edit Company Page</Link>
         <Link className={styles.link} href="/payment">Payment Report</Link>
         <Link className={styles.link} href="/changePassword">Change Password</Link> */}
-        <Link className={styles.link} href="/logout">Logout</Link>
+        <Link className={styles.link} href="/session/login">Logout</Link>
       </div>
     </>
   );

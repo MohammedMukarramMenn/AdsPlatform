@@ -4,6 +4,19 @@
     position: relative;
     background-color: #d8d7d7;
 }
+.left_banner {
+    position: fixed;
+    width: 200px;
+    left: 1;
+}
+.right_banner {
+    position: fixed;
+    width: 200px;
+    right: 1;
+}
+.fixed {
+    position: fixed;
+}
 
 /*@keyframes gradient-bg {*/
 /*    0% {*/
@@ -73,7 +86,7 @@
     position: sticky;
     top: 0;
     height: 100vh;
-  }
+}
 
 .shorting-right {
     width: auto;
@@ -93,13 +106,7 @@
         justify-content: center;
         order: 0;
     }
-
-    .hero_image img {
-        width: 40%;
+    .banner_col {
+        display: none;
     }
-
-    /*!*waves effect *!*/
-    /*.custom-shape-divider-bottom-1681647578 {*/
-    /*   display: none;*/
-    /*}*/
 }

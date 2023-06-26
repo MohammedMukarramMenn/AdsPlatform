@@ -8,6 +8,8 @@ import { createPost, get, getUserPost, update } from "../helper/ApiUrlHelper";
 
 const CreatePost = () => {
   const [formValues, setFormValues] = useState({});
+  const [file, setFile] = useState(null);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -18,6 +20,10 @@ const CreatePost = () => {
       return () => false;
     }
   }, []);
+
+  function fileUpload(event) {
+    setFile(event.target.files[0]);
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,12 +38,23 @@ const CreatePost = () => {
 
     const url = createPost();
 
+    const formData = new FormData();
+    formData.append("uploadFile", file);
+    formData.append("type", formValues.type);
+    formData.append("trafficModel", formValues.trafficModel);
+    formData.append("device", formValues.device);
+    formData.append("geo", formValues.geo);
+    formData.append("vertical", formValues.vertical);
+    formData.append("trackingType", formValues.trackingType);
+    formData.append("companyWebsite", formValues.companyWebsite);
+    formData.append("title", formValues.title);
+    formData.append("description", formValues.description);
+
     try {
       const response = await fetch(url, {
         method: "POST",
-        body: JSON.stringify(formValues),
+        body: formData,
         headers: {
-          "Content-Type": "application/json",
           token: Cookies.get("token"),
         },
       });
@@ -147,13 +164,12 @@ const CreatePost = () => {
           />
         </div>
         <div className="col-md-6 col-sm-12">
-          <label className="form-label">Image Url</label>
+          <label className="form-label">Upload Image</label>
           <input
-            type="text"
+            type="file"
             className="form-control"
             name="imageUrl"
-            value={formValues.imageUrl}
-            onChange={handleChange}
+            onChange={fileUpload}
           />
         </div>
         <div className="col-md-6 col-sm-12">

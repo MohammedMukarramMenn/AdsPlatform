@@ -4,7 +4,7 @@ import Link from "next/link";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { getUserPost } from "../helper/ApiUrlHelper";
+import { getImage, getUserPost } from "../helper/ApiUrlHelper";
 const PostList = () => {
   const router = useRouter();
   const [posts, setPosts] = useState([]);
@@ -47,7 +47,7 @@ const PostList = () => {
       {posts &&
         posts.map((post, index) => (
           <div
-            className={`container-fluid ${styles.cardContainer}`}
+            className={` ${styles.cardContainer}`}
             key={index}
           >
             <div className={`row ${styles.card}`}>
@@ -56,7 +56,7 @@ const PostList = () => {
                 <div className={styles.imageContainer}>
                   {post.image_url ? (
                     <Image
-                      src={post.image_url}
+                      src={getImage(post.image_url)}
                       layout="fill"
                       objectFit="cover"
                       alt="Something"
@@ -74,13 +74,27 @@ const PostList = () => {
               </div>
               <div className={`col-md-9 ${styles.cardContent}`}>
                 {/* <Link href={`/ad/${post.title}`} passHref> */}
-                <h1 className="title">{post.title}</h1>
+                <h1 className={`title ${styles.whiteBackground}`}>
+                  {post.title}
+                </h1>
                 {/* </Link> */}
-                <h4>{post.type}</h4>
+                <h4 className={`${styles.whiteBackground}`}>{post.type}</h4>
                 <p className={styles.cardText}>{post.description}</p>
-                <Link href={`/posts/${formatTitleForURL(post.title)}`}>
-                  <button className="btn btn-outline-success">Edit</button>
-                </Link>
+                <div className={`row ${styles.whiteBackground}`}>
+                  <Link
+                    className={`btn btn-outline-success mb-2`}
+                    href={`/posts/updateImage/${formatTitleForURL(post.title)}`}
+                  >
+                    Update Image
+                  </Link>
+
+                  <Link
+                    className={`btn btn-success text-light `}
+                    href={`/posts/${formatTitleForURL(post.title)}`}
+                  >
+                    Edit
+                  </Link>
+                </div>
               </div>
             </div>
 

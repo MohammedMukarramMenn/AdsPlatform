@@ -27,7 +27,7 @@ const EditPost = () => {
 
     const url = getPostDetails(path);
 
-    const res = await fetch(url);
+    const res = await fetch(url, { next: { revalidate: 0 } } );
     const data = await res.json();
     setFormValues(data.data[0]);
   }
@@ -160,14 +160,14 @@ const EditPost = () => {
           />
         </div>
         <div className="col-md-6 col-sm-12">
-          <label className="form-label">Image Url</label>
+          {/* <label className="form-label">Image Url</label>
           <input
-            type="text"
+            type="file"
             className="form-control"
             name="image_url"
             value={formValues.image_url || ""}
             onChange={handleChange}
-          />
+          /> */}
         </div>
         <div className="col-md-6 col-sm-12">
           <button type="submit" className="btn btn-warning">

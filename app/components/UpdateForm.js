@@ -144,16 +144,7 @@ const UpdateForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="col-md-6 col-sm-12">
-          <label className="form-label">Image Url</label>
-          <input
-            type="text"
-            className="form-control"
-            name="image_url"
-            value={formValues.image_url}
-            onChange={handleChange}
-          />
-        </div>
+
         <div className="col-md-6 col-sm-12">
           <label className="form-label">Skype</label>
           <input
@@ -173,6 +164,16 @@ const UpdateForm = () => {
             value={formValues.telegram}
             onChange={handleChange}
           />
+        </div>
+        <div className="col-md-6 col-sm-12">
+          {/* <label className="form-label">Image Url</label>
+          <input
+            type="text"
+            className="form-control"
+            name="image_url"
+            value={formValues.image_url}
+            onChange={handleChange}
+          /> */}
         </div>
         <div className="col-md-6 col-sm-12">
           <button type="submit" className="btn btn-warning">

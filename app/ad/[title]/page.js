@@ -10,7 +10,7 @@ const Page = async () => {
 
   const url = getPostDetails(path);
 
-  const res = await fetch(url);
+  const res = await fetch(url,{ next: { revalidate: 0 } });
   const data = await res.json();
 
   return (  

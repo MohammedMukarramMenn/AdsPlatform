@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+import Nav from "./components/Nav";
 import "./globals.css";
 
 export const metadata = {
@@ -10,8 +10,8 @@ export default function RootLayout({ children, onChange }) {
   return (
     <html lang="en">
       <body>
-        <Header onChange={onChange} />
-        <div style={{ marginTop: "10%" }}>{children}</div>
+        <Nav />
+        <div className="content">{children}</div>
       </body>
     </html>
   );

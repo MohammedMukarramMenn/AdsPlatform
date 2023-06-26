@@ -1,4 +1,11 @@
-@import 'bootstrap/dist/css/bootstrap.css';
+@import "bootstrap/dist/css/bootstrap.css";
 * {
     margin: 0;
+    background-color: rgb(249, 248, 248);
+}
+
+@media screen and (max-width: 768px) { 
+    * {
+        background-color: white;
+    }
 }
