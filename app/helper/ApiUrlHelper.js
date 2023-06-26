@@ -1,6 +1,6 @@
 // const baseUrl = "http://localhost:3001/";
 // const baseUrl = "http://192.168.1.23:3001/";
-const baseUrl = "http://apiadsplatform.demandesk.com/";
+const baseUrl = "https://apiadsplatform.demandesk.com/";
 
 const getPosts = () => {
   return baseUrl + "user/posts";
