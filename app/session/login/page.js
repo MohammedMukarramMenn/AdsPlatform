@@ -101,7 +101,7 @@ const Page = () => {
             </div>
             <div className={`col-12 ${styles.background}`}>
               <label className={`form-label ${styles.background}`}>
-                Don't have an account?
+                Do not have an account?
                 <Link href="/session/register"> <span className={`${styles.background}`}>Sign up</span></Link>
               </label>
             </div>

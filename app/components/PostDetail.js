@@ -26,7 +26,7 @@ const PostDetail = ({ details }) => {
         </div>
         <hr className={`${styles.hr}`}/>
         <div className={`col-12 ${styles.pd_background}`}>
-          <p className={`${styles.pd_background} ${styles.pd_p}`}>I'am: <span className={`${styles.pd_span}`}>{details.type}</span></p>
+          <p className={`${styles.pd_background} ${styles.pd_p}`}>I am: <span className={`${styles.pd_span}`}>{details.type}</span></p>
           <p className={`${styles.pd_background} ${styles.pd_p}`}>Traffic Model: <span className={`${styles.pd_span}`}>{details.traffic_model}</span></p>
           <p className={`${styles.pd_background} ${styles.pd_p}`}>Device: <span className={`${styles.pd_span}`}>{details.device}</span></p>
           <p className={`${styles.pd_background} ${styles.pd_p}`}>Geo: <span className={`${styles.pd_span}`}>{details.geo}</span></p>

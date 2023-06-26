@@ -153,7 +153,7 @@ const Page = () => {
                 </div>
                 <div className="col-12">
                   <label className="form-label">
-                    Don't have an account?
+                    Do not have an account?
                     <Link href="/session/register"> Sign up</Link>
                   </label>
                 </div>
