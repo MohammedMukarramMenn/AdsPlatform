@@ -35,8 +35,8 @@ const Nav = () => {
         <Link className={styles.navImageLink} href="/">
           <Image
             className={styles.logo}
-            src="/logo.png"
-            width={150}
+            src="/logo.jpg"
+            width={50}
             height={40}
             alt="Logo"
           />

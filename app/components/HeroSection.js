@@ -7,7 +7,7 @@ import Post from "./Post";
 const HeroSection = ({ posts, details }) => {
   return (
     <main>
-      <div className={`row`}>
+      <div className={`row ${heroStyles.heroContainer}`}>
         <div className={`col-md-2 ${heroStyles.banner_col}`}>
           <div className={heroStyles.left_banner}>
             <Banner imageUrl={"/adv1.gif"} width={500} height={500} />

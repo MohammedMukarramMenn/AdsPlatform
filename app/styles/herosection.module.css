@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Lexend+Deca:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap");
 
+.heroContainer {
+    margin-right: 0;
+}
+
 .main_section {
     position: relative;
     background-color: #d8d7d7;
