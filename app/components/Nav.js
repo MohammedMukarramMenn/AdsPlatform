@@ -42,7 +42,7 @@ const Nav = () => {
           />
         </Link>
       </div>
-      <div className={styles.linksContainer}>
+      <div className={`${styles.linksContainer}`}style={{color:"black"}}>
         <Link className={styles.navbarLink} href="/">
           Marketing Ads
         </Link>
